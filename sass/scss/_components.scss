@@ -1,0 +1,314 @@
+@import "_mixins";
+
+/* LOCALISATION */
+.search-form {
+    display: flex;
+    background-color: var(--softgrey);
+    justify-content: center;
+    i {
+    padding: 23px 15px;
+    color: var(--darkgrey);
+    }
+    p {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--darkgrey);
+    }
+}
+/* EXPLORE */
+.explore {
+    text-align: center;
+    padding: 50px 0px 80px 0px;
+    background: var(--lightgrey);
+    @include tablet {
+        background: url("https://images.prismic.io/hotel48nord3/f30e89ed-608a-4879-ac26-4af266736348_Breitenbach%20Landscape%20Hotel%20-%2048%C2%B0Nord%20%C2%A911h45_HD%20(24).jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&q=75&rect=0%2C200%2C3840%2C2160&w=1920&h=1080") center/cover;
+    }
+    &__title {
+        margin-bottom: 15px;
+        @include explore;
+        h1 {
+            margin: 0px;
+        }
+    }
+    &__text{
+        font-size: 20px;
+        @include explore;
+        p {
+            margin: 0px;  
+        }    
+    }
+    &__button {
+        margin-top: 50px;
+        @include transition;
+        &__text {
+            @include button;
+        }
+    }
+}
+/* FUNCTIONS */
+.functions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 55px;
+    h1 {
+        margin: 50px 0px 0px 20px;
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-evenly;
+    }
+}
+.functions-card {
+    background-color: var(--lightgrey);
+    padding: 30px 20px;
+    justify-content: space-evenly;
+    width: 90%;
+    position: relative; 
+    @include card;
+    @include tablet {
+        flex-direction: column;
+        width: 30%;
+        margin: 15px 0px;
+    }
+    .number {
+        color: var(--white);
+        text-shadow: var(--black) 1px 1px 0;
+        background-color: var(--purple);
+        border-radius: 50%;
+        padding: 3px 8px;
+        font-style: normal;
+        position: absolute;
+        left: -13px;
+    }
+    .fas {
+        color: var(--darkgrey);
+        margin: 0px 0px 0px 10px;
+        font-size: 20px;
+    }
+    .functions-card__button {
+        color: var(--darkgrey);
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0px 0px 0px 10px;
+    }
+}
+/* RESTAURANTS */
+.restaurants {
+    background-color: var(--lightgrey);
+    padding: 15px;
+    h2 {
+        margin: 20px 0px 15px 10px;
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+        margin-bottom: 30px;
+        .restaurant-card-list {
+            border-radius: 20px;
+            height: 220px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 0 2px var(--darkgrey);
+            background-color: var(--white);
+            @include transition;
+            @include tablet {
+                width: 48%;    
+            }
+            @include desktop {
+                width: 23%;
+            }
+        }             
+    }
+}
+.restaurant-card {
+    text-decoration: none; 
+    img {
+        border-radius: 15px 15px 0px 0px;
+        max-height: 100%;
+        height: 140px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center; 
+    }
+    .tag {
+        position: absolute;
+        background-color: var(--green);
+        color: var(--darkgreen);
+        padding: 8px 15px;
+        border-radius: 5px;
+        top: 20px;
+        right: 20px;
+        font-weight: bold;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 25px 0px 15px;
+        .restaurant-card__remark {  
+            color: var(--black);
+            h3 {
+                margin: 10px 0px 7px 0px;   
+            }
+            p {
+                margin: 0px 0px 0px 0px;  
+            }
+        }
+        i {
+            margin: 20px 0px 0px 0px;
+            font-size: 20px;
+            @include heart;
+        }
+    }
+}
+/* MENU */
+.menu__picture {
+    width: 100%;
+    object-fit: cover;
+    margin-top: -5px;
+    max-height: 300px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -50px;
+    background: var(--lightgrey);
+    border-radius: 40px 40px 0px 0px;
+    padding: 15px;
+    &-title {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+            font-family: "Shrikhand", "sans-serif";
+            font-weight: normal;
+            font-size: 35px;
+            margin: 20px 0px 15px 5px;
+        }
+        i {
+            margin: 30px 20px 0px 0px;
+            font-size: 30px;
+            @include heart;
+        }
+    }
+}
+.menu-list {
+    margin-left: 5px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 5px;
+    justify-content: space-evenly;
+    h2 {
+        font-weight: normal;
+        font-size: 20px;
+        text-transform: uppercase;
+        position: relative;
+        &::after {
+            content: "";
+            width: 50px;
+            height: 4px;
+            background-color: var(--green);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+    }
+}
+.menu-card-list {
+    width: 100%;
+    @include tablet {
+        width: 32%;    
+    }
+    .menu-card {
+        background-color: var(--white);
+        display: flex;
+        height: 70px;
+        transform: translateY(20px);
+        opacity: 0%;
+        overflow: hidden;
+        animation: slideup 1s forwards;   
+        @include card;
+        &:hover .menu-card__info__validation {
+            width: 70px;
+            opacity: 100%;   
+        }
+        &:hover .fa-check-circle {
+            transform: rotate(0deg);
+            transition: 0.4s ease-in-out;
+        }
+        &:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+        &:nth-child(4) {
+            animation-delay: 1s;
+        }
+        &:nth-child(5) {
+            animation-delay: 1.5s;
+        }
+    }
+}  
+.menu-card__info {
+    padding: 5px;
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+    flex: 1;
+    justify-content: space-between;
+    &__remark {
+        display: flex;
+        flex-direction: column;
+        color: var(--black);
+        overflow: hidden;
+        white-space: nowrap;
+        h3 {
+            margin: 8px 0px 0px 10px;
+            padding: 0px;
+            overflow: hidden;
+            text-overflow: ellipsis;  
+            margin-bottom: 0px; 
+        }
+        p {
+            margin: 2px 0px 0px 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }     
+    }
+    &__price {
+        color: var(--black);
+        display: flex;
+        align-items: flex-end;
+        margin: 68px 10px 0px 0px;
+    }
+}
+.menu-card__info__validation {
+    background: var(--green);
+    width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 15px 15px 0;
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    i {
+        color: var(--white);
+        font-size: 30px;
+        transition: 0.4s ease-in-out;
+        transform: rotate(360deg);  
+    }
+}
+.menu__button {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0px 90px 0px;
+    @include transition;
+    .menu__button__text {
+        @include button;
+    }
+}
+            
+        
+    
+

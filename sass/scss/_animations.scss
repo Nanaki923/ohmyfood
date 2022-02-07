@@ -1,0 +1,40 @@
+@keyframes slideup {
+    0% {
+        transform: translateY(20px);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 100%;
+    }
+  }
+@keyframes fadeout {
+    100% {
+        visibility: hidden;
+    }
+}
+@keyframes fadeout {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+        visibility: hidden;
+    }
+}
+@keyframes spinneroff {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

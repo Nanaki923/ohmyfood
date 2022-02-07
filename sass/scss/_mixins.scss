@@ -1,0 +1,75 @@
+@mixin explore {
+    color: var(--black); 
+    text-shadow: none;
+    @include tablet {
+        text-shadow: 0 0 5px var(--black);
+        color: var(--white);
+    }
+}
+@mixin button {
+    text-decoration: none;
+    background: linear-gradient(to left top, var(--purple), var(--pink));
+    color: var(--white);
+    text-shadow: var(--black) 1px 1px 0;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 2px var(--darkgrey);
+    transition: all .2s ease-in-out;
+    padding: 15px 50px;
+    &:hover {
+        box-shadow: 0 0 5px var(--black);
+        background: linear-gradient(to left top, var(--pink), var(--purple)); 
+    }
+}
+@mixin card {
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0 0 5px var(--grey);
+    @include transition;
+    &:hover {
+        background-color: var(--lightblue);
+    }
+}
+@mixin transition {
+    transition: all .2s ease-in-out;
+    &:hover {
+        transform: scale(1.01);
+    }
+}
+@mixin spinner {
+    position: absolute;
+    border-radius: 50%;
+    animation: spinner 1s 0.5s 5;
+}
+@mixin heart {
+    
+    color: var(--darkgrey);
+    font-weight: lighter;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        font-weight: bold;
+        color: var(--purple);
+        transform: scale(1.09);
+    }
+}
+@mixin mobile {
+    @media (min-width: map-get($breakpoint,"mobile")) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: map-get($breakpoint,"tablet")) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: map-get($breakpoint,"desktop")) {
+        @content;
+    }
+}
+                    
+
+

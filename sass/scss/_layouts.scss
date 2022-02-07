@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import "_mixins";
+
+/* WILDCARD */
+* {
+    box-sizing: border-box;
+    font-family: $roboto;
+}
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* NAVBAR */
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: var(--white);
+    opacity: 0.9;
+    height: 100%;
+    animation: fadeout 0.2s 3s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loader--large {
+        width: 330px;
+        height: 330px;
+        border-right: $spinnersize solid transparent;
+        border-top: $spinnersize solid var(--purple);
+        border-left: $spinnersize solid var(--purple);
+        border-bottom: $spinnersize solid var(--purple);
+        @include spinner; 
+    }
+    .loader--medium {
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border-left: $spinnersize solid transparent;
+        border-top: $spinnersize solid var(--pink);
+        border-right: $spinnersize solid var(--pink);
+        border-bottom: $spinnersize solid var(--pink);
+        animation: spinneroff 1s 0.5s 5;
+    }
+    .loader--small {
+        width: 150px;
+        height: 150px;
+        border-right: $spinnersize solid transparent;
+        border-top: $spinnersize solid var(--green);
+        border-left: $spinnersize solid var(--green);
+        border-bottom: $spinnersize solid var(--green);
+        @include spinner;
+    }
+    img {
+        width: 65px;
+        z-index: 1;
+    }
+}
+.header-box {
+    display: flex;
+    box-shadow: 0px 0px 12px 0px var(--darkgrey);
+    margin-bottom: 5px;
+    .fa-arrow-left {
+        font-size: 20px;
+        margin: 25px 0px 0px 30px;
+        &:hover {
+            color: var(--purple);
+        }
+    }
+    #logo {
+        display: block;
+        max-width: 180px;
+        height: auto;
+        cursor: pointer;
+        margin: 20px auto 15px auto;
+        @include transition;
+    }
+}
+/* FOOTER */
+.footer {
+    background-color: var(--darkgrey);
+    padding-bottom: 20px;
+    &__titles {
+        margin: 0px 50px 0px 25px;
+        display: flex;
+        flex-direction: column;
+    }  
+}
+.footer__logo {
+    color: var(--white);
+    font-family: $shrikhand;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: normal;
+}
+.footer__links {
+    color: var(--white);  
+    margin-bottom: 8px;
+    .fas {
+        font-size: 14px;
+    }
+    .fa-utensils::before {
+        padding: 3px;
+    }
+    .footer__link {
+        text-decoration: none;
+        color: var(--white);
+        &:hover {
+            color: var(--black);
+        }
+    }
+}  

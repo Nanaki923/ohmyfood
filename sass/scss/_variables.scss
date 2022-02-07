@@ -1,0 +1,27 @@
+
+
+$roboto: "Roboto", "sans-serif";
+$shrikhand: "Shrikhand", "sans-serif";
+
+$breakpoint: (
+    "mobile": 720px,
+    "tablet": 992px,
+    "desktop": 1200px,
+);
+
+
+$spinnersize: 40px;
+
+:root {
+    --purple: #9356DC;
+    --lightblue: #f5edff;
+    --pink: #FF79DA;
+    --green: #99E2D0;
+    --darkgreen: #3b8468;
+    --white: #FFFFFF;
+    --lightgrey: #ececec;
+    --softgrey: #dadada;
+    --grey: #bbbbbb;
+    --darkgrey: #383838;
+    --black: #000000;
+}
